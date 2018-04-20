@@ -1,0 +1,93 @@
+.reservation {
+	background: url(<%= asset_path 'banner1' %>) no-repeat 0px 0px !important;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-moz-background-size: cover;
+	min-height: 520px;
+	padding-top: 4em;
+}
+
+.banner-top {
+	background-image:  url(<%= asset_path 'banner1' %>) no-repeat 0px 0px !important;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-moz-background-size: cover;
+	min-height: 780px;
+}
+.callbacks_nav {
+	position: absolute;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	top: 55%;
+	left: 40px;
+	opacity: 0.7;
+	z-index: 3;
+	text-indent: -9999px;
+	overflow: hidden;
+	text-decoration: none;
+	height: 34px;
+	width: 34px;
+	background: url(<%= asset_path 'left.png' %>) no-repeat 0px 0px;
+}
+
+.callbacks_nav.next {
+	left: auto;
+	background: url(<%= asset_path 'right.png' %> ) no-repeat 0px 0px;
+	right: 0;
+}
+
+.callbacks_nav.prev {
+	left: auto;
+	background: url(<%= asset_path 'left.png' %>) no-repeat 0px 0px;
+	left: 0px;
+}
+
+#slider3-pager a {
+	display: inline-block;
+}
+#toTop {
+	display: none;
+	text-decoration: none;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	overflow: hidden;
+	width: 48px;
+	height: 48px;
+	border: none;
+	text-indent: 100%;
+	background: url(<%= asset_path 'scroll-top.png' %>) no-repeat 0px 0px;
+}
+
+
+.banner-top1 {
+	background-image:  url(<%= asset_path 'banner2' %>) no-repeat 0px 0px !important;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-moz-background-size: cover;
+	min-height: 780px;
+}
+
+.banner-top2 {
+	background: url(<%= asset_path 'banner3' %>) no-repeat 0px 0px;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-moz-background-size: cover;
+	min-height: 780px;
+}
+.banner-top3 {
+	background: url(<%= asset_path 'banner4' %>) no-repeat 0px 0px;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-moz-background-size: cover;
+	min-height: 780px;
+}

@@ -1,0 +1,25 @@
+<div class="owl-carousel col-md-3 col-sm-3 col-xs-3 slidering">
+  <% @cooks.each do | cook| %>
+  <div class="thumbnail"> <%= link_to image_tag(cook.photo, :class => ' img-responsive', :style =>"max-width:100%;height:300px;",:datatoggle =>"modal", :datatarget =>"#myModal"), cook %>
+  </div>
+  <% end %>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".owl-carousel").owlCarousel({
+            autoplay: true,     
+            items: 5,
+            autoplayHoverPause: true,
+            autoplayTimeout: 10,
+            autoplaySpeed: 1000,
+            fluidSpeed:true,
+            itemsDesktop : [1199,3],
+            itemsDesktopSmall: [979,3],
+            itemsMobile: [479,1],
+            navigation: false,
+            dots: false,
+            loop: true
+        });
+
+    });
+</script>

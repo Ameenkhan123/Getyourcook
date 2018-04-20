@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cooks</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Cook_Category_name</th>
+      <th>Contact</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Zipcode</th>
+      <th>Photo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cooks.each do |cook| %>
+    <tr>
+      <td><%= cook.name %></td>
+      <td><%= cook.cook_category.try(:name) %></td>
+      <td><%= cook.contact %></td>
+      <td><%= cook.address %></td>
+      <td><%= cook.city %></td>
+      <td><%= cook.state %></td>
+      <td><%= cook.country %></td>
+      <td><%= cook.zipcode %></td>
+      <td><%= image_tag cook.photo, :class => ' img-responsive', :style =>"max-width:50%;height:200px;" %></td>
+      <td><%= link_to 'Show', cook %></td>
+      <td><%= link_to 'Edit', edit_cook_path(cook) %></td>
+      <td><%= link_to 'Destroy', cook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cook', new_cook_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cook_category.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @cook_category.description %>
+</p>
+
+<%= link_to 'Edit', edit_cook_category_path(@cook_category) %> |
+<%= link_to 'Back', cook_categories_path %>

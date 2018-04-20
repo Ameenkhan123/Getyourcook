@@ -1,0 +1,73 @@
+<div class="about" id="about_one">
+	<div class="container">
+		<div class="about-main_w3_agileits">
+			<div class="col-md-3 about-left">
+				<%= image_tag @cook.photo, class: 'img-responsive' %>
+			</div>
+			<div class="col-md-3 about-right_agileits">
+				<h3>For Goof Taste</h3>
+				<p>
+					<strong>Name:</strong><br>
+					<%= @cook.name %>
+				</p>
+				<p>
+					<strong>Cook Ccategory:</strong><br>
+					<%= @cook.cook_category.try(:name) %>
+				</p>
+				<p>
+					<strong>Contact:</strong><br>
+					<%= @cook.contact %>
+				</p>
+				<p>
+					<strong>Address:</strong><br>
+					<%= @cook.address %>
+				</p>
+			</div>
+			<div class="col-md-3 about-right_agileits">  
+				<p>
+					<strong>City:</strong><br>
+					<%= @cook.city %>
+				</p>
+				<p>
+					<strong>State:</strong><br>
+					<%= @cook.state %>
+				</p>
+				<p>
+					<strong>Country:</strong><br>
+					<%= @cook.country %>
+				</p>
+				<p>
+					<strong>Zipcode:</strong><br>
+					<%= @cook.zipcode %>
+				</p>
+				<%#= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@cook.latitude},#{@cook.longitude}&markers=#{@cook.latitude},#{@cook.longitude}&zoom=7&size=640x400&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
+				class: 'img-responsive img-rounded', alt: "#{@cook.address} on the map"%>
+			</div>
+		</div>
+		<div class="col-md-3 about-right_agileits">
+			<p> 
+				<% @cook.reviews.each do |review| %>
+				<%= review.user.try(:name) %><br>
+				<%= review.user.try(:email) %>
+				<% end %>
+			</p>
+			<%= form_for :review, url: :cooks_create_review, method: :post do |f| %>
+			<p>
+				<%= f.label :review %>
+				<%= f.text_area :message %>
+			</p>
+			<%if user_signed_in?%>
+			<%= f.hidden_field :cook_id, value: @cook.id %>
+			<%= f.hidden_field :user_id, value: current_user.id %>
+			<%= f.hidden_field :user_id, value: current_user.try(:name) %>
+			<%= f.hidden_field :email, value: current_user.email %>
+			<%end%>
+			<div class="actions">
+				<%= f.submit 'Submit Review' %>
+			</div>
+			<%end%>
+			<%= rating_for @cook, 'speed', enable_half: true %>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
